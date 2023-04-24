@@ -42,13 +42,13 @@ SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
 ```
 
 Don't forget to replace `your_openai_token`, `your_spotify_client_id`, and `your_spotify_client_secret` with your actual token values.
-#### Generating **OPENAI_TOKEN**
+### Generating **OPENAI_TOKEN
 
 1. Go to [OpenAI](https://beta.openai.com/signup/) and create an account or log in.
 2. Navigate to the [API keys](https://beta.openai.com/account/api-keys) page.
 3. Click the "Create an API key" button and copy the key generated.
 
-#### Generating **SPOTIFY_CLIENT_ID** and **SPOTIFY_CLIENT_SECRET**
+### Generating **SPOTIFY_CLIENT_ID** and **SPOTIFY_CLIENT_SECRET**
 
 1. Visit the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/applications) and log in with your Spotify account or create a new one.
 2. Click on the "Create an App" button.
@@ -56,6 +56,27 @@ Don't forget to replace `your_openai_token`, `your_spotify_client_id`, and `your
 4. You will be redirected to your app's overview page. Here, you'll find your `SPOTIFY_CLIENT_ID` (Client ID) and `SPOTIFY_CLIENT_SECRET` (Client Secret).
 5. set the redirect url to `http://localhost:<redirect_port>}/callback` where "<redirect_port>" is the same as specified in ``generator.config.json``
 
+## Configuration
+
+To begin using the generator you will need to create a `generator.config.json` file in the project root. This file allows you to set your Spotify username, choose the GPT model, and specify a redirect port for authentication.
+
+Here's an example `generator.config.json` file:
+
+<pre>
+{
+  "spotify_username": "your_spotify_username",
+  "gpt_model": "gpt_model_name",
+  "redirect_port": your_redirect_port
+}
+</pre>
+
+### Configuration Options
+
+- `spotify_username` (string): Set your Spotify username (required for playlist generation).
+- `gpt_model` (string): Choose the GPT model you want to use (e.g., "gpt-3", "gpt-3.5-turbo", "gpt-4").
+- `redirect_port` (integer): Specify the port for the OAuth2 redirect during Spotify authentication. Ensure this matches the redirect URL specified in your Spotify Developer Dashboard.
+
+Replace `your_spotify_username`, `gpt_model_name`, and `your_redirect_port` with your actual values.
 ## Usage
 Run: ``npm run playlist <Your Prompt>`` with the following optional flags
 
