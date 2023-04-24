@@ -17,10 +17,10 @@ export const safeSearch = async ({ song, artist, token }: SearchParams): Promise
                 return results[0];
             } else {
                 colorPrint(
-                    'FgRed',
-                    `Couldn't find artist match for "${query}"\n ${
-                        textColors['FgGreen']
-                    }Expected: "${expectedArtist}" ${textColors['FgRed']}Found: "${JSON.stringify(actualArtists)}"\n`
+                    'FgWhite',
+                    `Couldn't find artist match for "${query}"\n${textColors['FgGreen']}Expected: "${expectedArtist}" ${
+                        textColors['FgRed']
+                    }Found: "${JSON.stringify(actualArtists)}"\n`
                 );
             }
         }
