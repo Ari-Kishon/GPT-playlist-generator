@@ -54,6 +54,7 @@ Don't forget to replace `your_openai_token`, `your_spotify_client_id`, and `your
 2. Click on the "Create an App" button.
 3. Fill in the required information for your new app and click "Create".
 4. You will be redirected to your app's overview page. Here, you'll find your `SPOTIFY_CLIENT_ID` (Client ID) and `SPOTIFY_CLIENT_SECRET` (Client Secret).
+5. set the redirect url to `http://localhost:<redirect_port>}/callback` where "<redirect_port>" is the same as specified in ``generator.config.json``
 
 ## Usage
 | Option                        | Description                                                                     | Default  |

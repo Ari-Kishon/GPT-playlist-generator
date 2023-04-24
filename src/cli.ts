@@ -9,7 +9,7 @@ process.on('uncaughtException', setFailureExitCode);
 process.on('unhandledRejection', setFailureExitCode);
 
 readEnvFile();
-const { spotify_username, gpt_model } = readUserConfig();
+const { spotify_username, gpt_model, redirect_port } = readUserConfig();
 
 const program = new Command();
 
@@ -46,9 +46,9 @@ program
                 .join('\n')}`,
             'FgMagenta'
         );
-        const code = await getUserAuth();
+        const code = await getUserAuth(redirect_port);
         printLog(debugSpotify, `Received user code:\n${code}`, 'FgGreen');
-        const { access_token } = await getAccessToken(code);
+        const { access_token } = await getAccessToken(code, redirect_port);
         printLog(debugSpotify, `Received access_token:\n${access_token}`, 'FgGreen');
         const tracks = [];
         for (const { song, artist } of songs) {

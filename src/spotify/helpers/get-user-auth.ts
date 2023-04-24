@@ -3,14 +3,14 @@ import querystring from 'querystring';
 import { colorPrint } from '../../helpers';
 import express from 'express';
 
-export const getUserAuth = async () => {
+export const getUserAuth = async (redirect_port: number) => {
     const PORT = 54321;
     const clientID = process.env.SPOTIFY_CLIENT_ID;
     const params = querystring.stringify({
         response_type: 'code',
         client_id: clientID,
         scope: 'playlist-modify-private',
-        redirect_uri: 'http://localhost:54321/callback',
+        redirect_uri: `http://localhost:${redirect_port}/callback`,
     });
     const urlObj = new URL('https://accounts.spotify.com/authorize');
     const searchParams = new URLSearchParams(params);

@@ -6,7 +6,7 @@ const CONFIG_FILE_NAME = 'generator.config.json';
 const CWD = process.cwd();
 const CONFIG_PATH = path.join(CWD, CONFIG_FILE_NAME);
 
-const EXPECTED_CONFIG_KEYS: Array<keyof UserConfig> = ['spotify_username', 'gpt_model'];
+const EXPECTED_CONFIG_KEYS: Array<keyof UserConfig> = ['spotify_username', 'gpt_model', 'redirect_port'];
 
 export const readUserConfig = (): UserConfig => {
     let userConfigContent;

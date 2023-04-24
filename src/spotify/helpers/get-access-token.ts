@@ -9,11 +9,11 @@ interface TokenResponse {
     refresh_token?: string;
 }
 import axios from 'axios';
-export const getAccessToken = async (code: string): Promise<TokenResponse> => {
+export const getAccessToken = async (code: string, redirect_port: number): Promise<TokenResponse> => {
     const params = querystring.stringify({
         grant_type: 'authorization_code',
         code,
-        redirect_uri: 'http://localhost:54321/callback',
+        redirect_uri: `http://localhost:${redirect_port}/callback`,
         client_id: clientId,
         client_secret: clientSecret,
     });
