@@ -27,10 +27,10 @@ export const getUserAuth = async () => {
         });
 
         const server = app.listen(PORT, async () => {
-            console.log(colorPrint('FgGreen', `Waiting for authorization from browser`));
+            colorPrint('FgGreen', `Waiting for authorization from browser`);
         });
         const start = process.platform == 'darwin' ? 'open' : process.platform == 'win32' ? 'start' : 'xdg-open';
-        console.log(colorPrint('FgCyan', `Please visit the following URL to authorize your application:\n${authUrl}`));
+        colorPrint('FgCyan', `Please visit the following URL to authorize your application:\n${authUrl}`);
         child_process.exec(`${start} "${authUrl}"`);
         setTimeout(() => {
             server.close();

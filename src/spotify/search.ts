@@ -34,7 +34,7 @@ export const getSong = async (song: string, artist: string, token: string) => {
             }
         }
     }
-    console.log(colorPrint('FgRed', `[!] Search failed for songs by "${artist}"\n`));
+    colorPrint('FgRed', `[!] Search failed for songs by "${artist}"\n`);
 };
 
 interface IPrintWarning {
@@ -43,12 +43,10 @@ interface IPrintWarning {
     expectedArtist: string;
 }
 const printWarning = ({ expectedArtist, query, actualArtist }: IPrintWarning) => {
-    console.log(
-        colorPrint(
-            'FgRed',
-            `Couldn't find artist match for "${query}"\nExpected: "${expectedArtist}"\nFound: "${JSON.stringify(
-                actualArtist
-            )}"\n`
-        )
+    colorPrint(
+        'FgRed',
+        `Couldn't find artist match for "${query}"\nExpected: "${expectedArtist}"\nFound: "${JSON.stringify(
+            actualArtist
+        )}"\n`
     );
 };
