@@ -29,7 +29,7 @@ program
     .option('--dryRun [dryRun]', 'Query GPT without creating a playlist')
     .action(async (prompt, { searchType, temperature, maxTokens: max_tokens, debugGpt, debugSpotify, dryRun }) => {
         const { getAccessToken, createPlaylist, updatePlaylist, getUserAuth, getSong } = await import('./spotify');
-        const { playlist } = await import('./commands/playlist');
+        const { playlist } = await import('./commands/playlist/playlist');
 
         printLog(debugGpt, `Generating "${prompt}"`, 'FgMagenta');
         const { songs, title, description } = await playlist(prompt, {
