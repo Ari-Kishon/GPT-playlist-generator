@@ -15,8 +15,9 @@ This TypeScript project provides an easy-to-use command line tool that generates
 
 - [Features](#features)
 - [Prerequisites](#prerequisites)
-- [Setup](#Setup)
+- [Setup](#setup)
 - [Usage](#usage)
+- [SafeSearch](#safe-search)
 - [Troubleshooting](#troubleshooting)
 ## Features
 
@@ -97,6 +98,24 @@ Run: ``npm run playlist <Your Prompt>`` with the following optional flags
 | \`-ds, --debugSpotify\`         | Display verbose Spotify related logging for debugging                           | boolean | false |
 | \`--dryRun\`                    | Query GPT without creating a playlist                                           | boolean | false |
 | \`-st, --searchType\`           | Method used to search for songs on Spotify                                      | 'safe' | |
+
+## Search Types
+### Default 
+search for `${artist} ${songName}` and return the first result
+### Safe Search
+
+Attempt to match a song on Spotify by trying various combinations of the song and artist names, ensuring that it can find a match even if the initial query doesn't yield the desired result.
+
+Define an array of three different search queries:
+
+- `${song} ${artist}`: Combines the song and artist names.
+- `${artist} ${song}`: Reverses the order of song and artist names.
+- `${artist}`: Uses only the artist name.
+
+For each query in the array, Check if there's a match between the expected artist and any of the actual artists on the track. If so return the track.
+If no match is found, ignore the track.
+
+
 
 ## Troubleshooting
 
