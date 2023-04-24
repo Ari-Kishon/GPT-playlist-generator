@@ -19,7 +19,7 @@ export const playlist = async (prompt: string, { requestParams }: BaseCommandPar
             .map((line) => {
                 const split = line.split('-');
                 return {
-                    song: split[1]?.trim(),
+                    song: split[1]?.trim() ?? '',
                     artist: split[0].trim(),
                 };
             }),
