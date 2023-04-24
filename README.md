@@ -42,7 +42,7 @@ SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
 ```
 
 Don't forget to replace `your_openai_token`, `your_spotify_client_id`, and `your_spotify_client_secret` with your actual token values.
-### Generating **OPENAI_TOKEN
+### Generating **OPENAI_TOKEN**
 
 1. Go to [OpenAI](https://beta.openai.com/signup/) and create an account or log in.
 2. Navigate to the [API keys](https://beta.openai.com/account/api-keys) page.
