@@ -10,7 +10,7 @@ export const getSong = async (searchParams: SearchParams): Promise<Song | undefi
         case '':
             return defaultSearch(searchParams);
         case 'safe':
-            safeSearch(searchParams);
+            await safeSearch(searchParams);
             break;
         default:
             printLog(true, `Unknown search type "${searchType}", defaulting to regular search`, 'FgRed');
