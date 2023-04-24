@@ -1,4 +1,13 @@
-# **GPT-playlist-generator**
+
+![CI](https://img.shields.io/github/actions/workflow/status/Ari-Kishon/GPT-playlist-generator/.github/workflows/build.yml?logo=github&style=for-the-badge)
+# GPT-playlist-generator
+![GitHub last commit](https://img.shields.io/github/last-commit/Ari-Kishon/GPT-playlist-generator?style=for-the-badge)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Ari-Kishon/GPT-playlist-generator?style=for-the-badge)
+![GitHub stars](https://img.shields.io/github/stars/Ari-Kishon/GPT-playlist-generator?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/Ari-Kishon/GPT-playlist-generator?style=for-the-badge)
+
+---
+
 Harness the power of GPT to generate personalized Spotify playlists with a simple text prompt. Curate your musical experience effortlessly!
 This TypeScript project provides an easy-to-use command line tool that generates a playlist on Spotify based on a user's prompt. Powered by OpenAI's GPT.
 
@@ -96,3 +105,15 @@ If you encounter any issues or errors, try the following steps:
 1. Make sure you have the correct tokens and credentials set up in your \`.env\` file.
 2. Use the \`--debugGpt\` and \`--debugSpotify\` options to see verbose logs for better understanding of the issue.
 3. Make sure your Node.js and npm versions meet the minimum requirements mentioned in the [Prerequisites](#prerequisites) section.
+
+![GitHub issues](https://img.shields.io/github/issues/Ari-Kishon/GPT-playlist-generator?style=for-the-badge)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/Ari-Kishon/GPT-playlist-generator?style=for-the-badge)
+
+
+## Contributors 
+![GitHub contributors](https://img.shields.io/github/contributors/Ari-Kishon/GPT-playlist-generator?style=for-the-badge)  
+![GitHub top language](https://img.shields.io/github/languages/top/Ari-Kishon/GPT-playlist-generator?style=for-the-badge)
+![GitHub Repo size](https://img.shields.io/github/repo-size/Ari-Kishon/GPT-playlist-generator?style=for-the-badge)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Ari-Kishon/GPT-playlist-generator?style=for-the-badge)
+
+
