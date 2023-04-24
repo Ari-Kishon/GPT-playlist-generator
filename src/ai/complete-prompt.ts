@@ -6,7 +6,9 @@ interface ICompletePrompt {
 }
 
 export const completePrompt = async ({ openai, requestOptions }: ICompletePrompt) => {
-    const { data } = await openai.createChatCompletion(requestOptions);
+    const { data } = await openai.createChatCompletion(requestOptions).catch((e) => {
+        throw new Error(e.message);
+    });
     return new Promise<string>((resolve, reject) => {
         if (data.choices) {
             if (!data.choices[0]) {
