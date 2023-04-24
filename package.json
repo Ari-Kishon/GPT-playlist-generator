@@ -7,7 +7,7 @@
     "prebuild": "eslint .",
     "build": "tsc",
     "prettier": "prettier .",
-    "spotify-playlist": "ts-node src/cli.ts generate-playlist"
+    "playlist": "ts-node src/cli.ts generate-playlist"
   },
   "repository": {
     "type": "git",

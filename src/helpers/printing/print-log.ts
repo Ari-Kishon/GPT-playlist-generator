@@ -1,5 +1,5 @@
-import { colorPrint } from './color-print';
+import { Color, colorPrint } from './color-print';
 
-export const printLog = (text: string) => {
-    colorPrint('FgYellow', `[!] ${text.replace(new RegExp('\\n', 'g'), '\n    ')}\n`);
+export const printLog = (on: boolean, text: string, color: Color = 'FgYellow') => {
+    if (on) colorPrint(color, `[!] ${text.replace(new RegExp('\\n', 'g'), '\n    ')}\n`);
 };

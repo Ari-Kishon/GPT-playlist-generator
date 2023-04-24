@@ -23,11 +23,12 @@ export const getUserAuth = async () => {
         app.get('/callback', async (req, res) => {
             code = req.query.code as string;
             res.send('Authentication Complete! You can close this window.');
+            colorPrint('FgBlue', `Authorization received`);
             resolve(code);
         });
 
         const server = app.listen(PORT, async () => {
-            colorPrint('FgGreen', `Waiting for authorization from browser`);
+            colorPrint('FgBlue', `Waiting for authorization response from browser`);
         });
         const start = process.platform == 'darwin' ? 'open' : process.platform == 'win32' ? 'start' : 'xdg-open';
         colorPrint('FgCyan', `Please visit the following URL to authorize your application:\n${authUrl}`);
