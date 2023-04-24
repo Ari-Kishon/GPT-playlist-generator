@@ -89,14 +89,14 @@ Replace `your_spotify_username`, `gpt_model_name`, and `your_redirect_port` with
 ## Usage
 Run: ``npm run playlist <Your Prompt>`` with the following optional flags
 
-| Option                        | Description                                                                     | Default  |
-|-------------------------------|---------------------------------------------------------------------------------|----------|
-| \`-st, --searchType\`           | Method used to search for songs on Spotify                                      |          |
-| \`-t, --temperature\`           | Adjusts output randomness for diverse, creative responses                       | 0.5      |
-| \`-mt, --maxTokens\`            | Maximum amount of tokens for the response                                       | 850      |
-| \`-dg, --debugGpt\`             | Display verbose GPT related logging for debugging                               |          |
-| \`-ds, --debugSpotify\`         | Display verbose Spotify related logging for debugging                           |          |
-| \`--dryRun\`                    | Query GPT without creating a playlist                                           |          |
+| Option                        | Description                                                                     | Type  | Default 
+|-------------------------------|---------------------------------------------------------------------------------|----------|-------|
+| \`-t, --temperature\`           | Adjusts output randomness for diverse, creative responses                       | number [0-1] | 850 |
+| \`-mt, --maxTokens\`            | Maximum amount of tokens for the response                                       | number [integer] | 0.5 | 
+| \`-dg, --debugGpt\`             | Display verbose GPT related logging for debugging                               | boolean | false |
+| \`-ds, --debugSpotify\`         | Display verbose Spotify related logging for debugging                           | boolean | false |
+| \`--dryRun\`                    | Query GPT without creating a playlist                                           | boolean | false |
+| \`-st, --searchType\`           | Method used to search for songs on Spotify                                      | 'safe' | |
 
 ## Troubleshooting
 
