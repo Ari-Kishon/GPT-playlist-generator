@@ -1,4 +1,3 @@
-export * from './search';
+export * from './endpoints';
 export * from './helpers';
-export * from './create-playlist';
-export * from './update-playlist';
+export * from './get-song';
