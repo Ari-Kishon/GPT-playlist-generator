@@ -16,6 +16,7 @@ export const playlist = async (prompt: string, { requestParams }: BaseCommandPar
         songs: playlist
             .split('\n')
             .filter((line) => line)
+            .filter((line) => line.length < 80) // Try to filter out none-song results
             .map((line) => {
                 const split = line.split('-');
                 return {
