@@ -1,6 +1,6 @@
 import child_process from 'child_process';
 import querystring from 'querystring';
-import { colorPrint, printLog } from '../../helpers';
+import { printLog } from '../../helpers';
 import express from 'express';
 
 export const getUserAuth = async (redirect_port: number) => {
