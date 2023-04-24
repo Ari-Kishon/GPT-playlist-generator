@@ -1,6 +1,6 @@
 import child_process from 'child_process';
 import querystring from 'querystring';
-import { colorPrint } from '../../helpers';
+import { colorPrint, printLog } from '../../helpers';
 import express from 'express';
 
 export const getUserAuth = async (redirect_port: number) => {
@@ -23,15 +23,15 @@ export const getUserAuth = async (redirect_port: number) => {
         app.get('/callback', async (req, res) => {
             code = req.query.code as string;
             res.send('Authentication Complete! You can close this window.');
-            colorPrint('FgBlue', `Authorization received`);
+            printLog(true, `Authorization received`, 'FgBlue');
             resolve(code);
         });
 
         const server = app.listen(PORT, async () => {
-            colorPrint('FgBlue', `Waiting for authorization response from browser`);
+            printLog(true, `Waiting for authorization response from browser`, 'FgBlue');
         });
         const start = process.platform == 'darwin' ? 'open' : process.platform == 'win32' ? 'start' : 'xdg-open';
-        colorPrint('FgCyan', `Please visit the following URL to authorize your application:\n${authUrl}`);
+        printLog(true, `Please visit the following URL to authorize your application:\n${authUrl}`, 'FgCyan');
         child_process.exec(`${start} "${authUrl}"`);
         setTimeout(() => {
             server.close();

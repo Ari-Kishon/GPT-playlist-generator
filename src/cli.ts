@@ -31,7 +31,7 @@ program
         const { getAccessToken, createPlaylist, updatePlaylist, getUserAuth, getSong } = await import('./spotify');
         const { playlist } = await import('./commands/playlist/playlist');
 
-        printLog(debugGpt, `Generating "${prompt}"`, 'FgMagenta');
+        printLog(true, `Generating "${prompt}"`);
         const { songs, title, description } = await playlist(prompt, {
             requestParams: {
                 model: gpt_model,
