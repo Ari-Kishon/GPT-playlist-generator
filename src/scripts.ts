@@ -14,17 +14,13 @@ const program = new Command();
 
 program
     .command('generate-env-file')
-    .option('-ck, --consumerKey [consumerKey]', 'consumer key token')
+    .option('-ci, --consumerId [consumerId]', 'consumer id token')
     .option('-cs, --consumerSecret [consumerSecret]', 'consumer secret token')
-    .option('-ak, --accessKey [accessKey]', 'access key token')
-    .option('-as, --accessSecret [accessSecret]', 'access secret token')
     .option('-ok, --openaiToken [openaiToken]', 'openAI token')
-    .action(async ({ consumerKey, consumerSecret, accessKey, accessSecret, openaiToken }) => {
+    .action(async ({ consumerId, consumerSecret, openaiToken }) => {
         const envFileContent: string[] = [];
-        envFileContent.push(`CONSUMER_KEY=${consumerKey}`);
-        envFileContent.push(`CONSUMER_SECRET=${consumerSecret}`);
-        envFileContent.push(`ACCESS_KEY=${accessKey}`);
-        envFileContent.push(`ACCESS_SECRET=${accessSecret}`);
+        envFileContent.push(`SPOTIFY_CLIENT_ID=${consumerId}`);
+        envFileContent.push(`SPOTIFY_CLIENT_SECRET=${consumerSecret}`);
         envFileContent.push(`OPENAI_TOKEN=${openaiToken}`);
         fs.writeFileSync('.env', envFileContent.join('\n'));
     });

@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import { Command } from 'commander';
-import { printLog, readEnvFile } from './helpers';
-import { MODEL_QUALITY } from './universal';
+import { printLog, readEnvFile, readUserConfig } from './helpers';
 const setFailureExitCode = (e: unknown) => {
     process.exitCode = 1;
     console.error(e);
@@ -10,6 +9,7 @@ process.on('uncaughtException', setFailureExitCode);
 process.on('unhandledRejection', setFailureExitCode);
 
 readEnvFile();
+const { spotify_username, gpt_model } = readUserConfig();
 
 const program = new Command();
 
@@ -28,7 +28,7 @@ program
         printLog(`Generating playlist:\n${prompt}`);
         const { songs, title, description } = await playlist(prompt, {
             requestParams: {
-                model: MODEL_QUALITY,
+                model: gpt_model,
                 temperature: 0.5,
                 max_tokens: 850,
             },
@@ -63,7 +63,7 @@ program
         printLog(`Found song uris:\n${uris}`);
         const {
             data: { id: playlistId },
-        } = await createPlaylist({ user: 'pwnulator', name: title, description, token: access_token });
+        } = await createPlaylist({ user: spotify_username, name: title, description, token: access_token });
         printLog(`Created playlist\n${playlistId}`);
         await updatePlaylist({ playlistId: playlistId, songUris: uris, token: access_token });
         printLog(`Done :)`);

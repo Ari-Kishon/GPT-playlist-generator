@@ -1,7 +1,4 @@
-export interface ApiTokens {
-    consumerKey: string;
-    consumerSecret: string;
-    accessKey: string;
-    accessSecret: string;
-    openaiToken: string;
+export interface UserConfig{
+    spotify_username: string,
+    gpt_model: string,
 }
