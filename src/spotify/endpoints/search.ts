@@ -14,4 +14,3 @@ export const search = async ({
             Authorization: `Bearer ${token}`,
         },
     });
-

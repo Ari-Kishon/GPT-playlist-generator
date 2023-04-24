@@ -1,4 +1,4 @@
-export interface UserConfig{
-    spotify_username: string,
-    gpt_model: string,
+export interface UserConfig {
+    spotify_username: string;
+    gpt_model: string;
 }
