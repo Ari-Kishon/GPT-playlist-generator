@@ -17,10 +17,17 @@ program
     .command('generate-playlist')
     .argument('prompt')
     .option(
+        '-t, --temperature [temperature]',
+        'Adjusts output randomness: higher values produce diverse, creative responses',
+        (v) => parseFloat(v),
+        0.5
+    )
+    .option('-mt, --maxTokens [maxTokens]', 'Maximum amount of tokens for the response', (v) => parseInt(v), 850)
+    .option(
         '-e, --experimental [experimental]',
         'Try to always find correct songs (may results in smaller less accurate playlists than requested)'
     )
-    .action(async (prompt, { experimental }) => {
+    .action(async (prompt, { experimental, temperature, maxTokens: max_tokens }) => {
         const { search, getAccessToken, createPlaylist, updatePlaylist, getUserAuth, getSong } = await import(
             './spotify'
         );
@@ -29,8 +36,8 @@ program
         const { songs, title, description } = await playlist(prompt, {
             requestParams: {
                 model: gpt_model,
-                temperature: 0.5,
-                max_tokens: 850,
+                temperature,
+                max_tokens,
             },
         });
         printLog(
