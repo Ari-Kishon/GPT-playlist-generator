@@ -57,6 +57,8 @@ Don't forget to replace `your_openai_token`, `your_spotify_client_id`, and `your
 5. set the redirect url to `http://localhost:<redirect_port>}/callback` where "<redirect_port>" is the same as specified in ``generator.config.json``
 
 ## Usage
+Run: ``npm run playlist <Your Prompt>`` with the following optional flags
+
 | Option                        | Description                                                                     | Default  |
 |-------------------------------|---------------------------------------------------------------------------------|----------|
 | \`-st, --searchType\`           | Method used to search for songs on Spotify                                      |          |
