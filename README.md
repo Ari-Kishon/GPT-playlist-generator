@@ -56,15 +56,15 @@ Don't forget to replace `your_openai_token`, `your_spotify_client_id`, and `your
 
 1. Go to [OpenAI](https://beta.openai.com/signup/) and create an account or log in.
 2. Navigate to the [API keys](https://beta.openai.com/account/api-keys) page.
-3. Click the "Create an API key" button and copy the key generated.
+3. Click the "Create new secret key" button and copy the key generated.
 
 ### Generating **SPOTIFY_CLIENT_ID** and **SPOTIFY_CLIENT_SECRET**
 
 1. Visit the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/applications) and log in with your Spotify account or create a new one.
-2. Click on the "Create an App" button.
-3. Fill in the required information for your new app and click "Create".
-4. You will be redirected to your app's overview page. Here, you'll find your `SPOTIFY_CLIENT_ID` (Client ID) and `SPOTIFY_CLIENT_SECRET` (Client Secret).
-5. set the redirect url to `http://localhost:<redirect_port>}/callback` where "<redirect_port>" is the same as specified in ``generator.config.json``
+2. Click on the "Create App" button.
+3. Set the redirect url to `http://localhost:<redirect_port>}/callback` where "<redirect_port>" is the same as specified in ``generator.config.json``
+4. Fill in the required information for your new app and click "Save".
+5. You will be redirected to your app's overview page. Here, you can find your `SPOTIFY_CLIENT_ID` (Client ID) and `SPOTIFY_CLIENT_SECRET` (Client Secret).
 
 ## Configuration
 
