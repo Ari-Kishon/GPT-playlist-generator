@@ -117,7 +117,7 @@ For each query in the array, Check if there's a match between the expected artis
 If no match is found, ignore the track.
 
 ## Examples
-\* Please note that the speed and quality of the generated playlist varies between different modesl of GPT.  
+\* Please note that the speed and quality of the generated playlist varies between different models of GPT.  
    For the best results it is recommended to use gpt-4 if possible.
 
 | Prompt                                                   | Model  | Temperature 
