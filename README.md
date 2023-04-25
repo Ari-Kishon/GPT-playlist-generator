@@ -17,7 +17,8 @@ This TypeScript project provides an easy-to-use command line tool that generates
 - [Prerequisites](#prerequisites)
 - [Setup](#setup)
 - [Usage](#usage)
-- [SafeSearch](#safe-search)
+- [Search types](#search-types)
+- [Examples](#examples)
 - [Troubleshooting](#troubleshooting)
 ## Features
 
@@ -99,7 +100,7 @@ Run: ``npm run playlist <Your Prompt>`` with the following optional flags
 | \`--dryRun\`                    | Query GPT without creating a playlist                                           | boolean | false |
 | \`-st, --searchType\`           | Method used to search for songs on Spotify                                      | 'safe' | |
 
-## Search Types
+## Search types
 ### Default 
 search for `${artist} ${songName}` and return the first result
 ### Safe Search
@@ -115,7 +116,16 @@ Define an array of three different search queries:
 For each query in the array, Check if there's a match between the expected artist and any of the actual artists on the track. If so return the track.
 If no match is found, ignore the track.
 
+## Examples
+\* Please note that the speed and quality of the generated playlist varies between different modesl of GPT.  
+   For the best results it is recommended to use gpt-4 if possible.
 
+| Prompt                                                   | Model  | Temperature 
+|----------------------------------------------------------|--------|-------|
+|[Japanese city pop songs that are easy for begginers](https://open.spotify.com/playlist/1cd8Y62C6HPEsuAPKWLtbj?si=9e0118441cc4444a)|gpt-4| 0.5 |
+|[25 Songs by the big 4 of thrash metal](https://open.spotify.com/playlist/25yhBXNW2HKXcHwSd6Y0Ec?si=4e7cc14ca70540a2)|gpt-4| 0.5 |
+|[An ecclectic mix of Death Grips and Kero Kero Bontio](https://open.spotify.com/playlist/2kSDawBKp0EIdRP2rsyDar?si=8c3e699418a84f19)|gpt-4| 0.5 |
+|[Songs about funny dogs and sad presidents](https://open.spotify.com/playlist/6GoIM4zaYpmfWrY9XW584L?si=4ad9304e5dad4b80)|gpt-4| 0.5 |
 
 ## Troubleshooting
 
@@ -134,5 +144,3 @@ If you encounter any issues or errors, try the following steps:
 ![GitHub top language](https://img.shields.io/github/languages/top/Ari-Kishon/GPT-playlist-generator?style=for-the-badge)
 ![GitHub Repo size](https://img.shields.io/github/repo-size/Ari-Kishon/GPT-playlist-generator?style=for-the-badge)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Ari-Kishon/GPT-playlist-generator?style=for-the-badge)
-
-
