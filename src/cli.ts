@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { Command } from 'commander';
 import { printLog, readEnvFile, readUserConfig } from './helpers';
 const setFailureExitCode = (e: unknown) => {
